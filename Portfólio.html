@@ -1,0 +1,114 @@
+<!DOCTYPE html> 
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: white; }
+        header { background: #333; color: white; padding: 20px; text-align: center; }
+        section { padding: 20px; }
+
+        /* Animação de fundo */
+        @keyframes backgroundAnimation {
+            0% { background-color: rgb(76, 175, 80); }
+            25% { background-color: rgb(255, 193, 7); }
+            50% { background-color: rgb(255, 87, 34); }
+            75% { background-color: rgb(63, 81, 181); }
+            100% { background-color: rgb(76, 175, 80); }
+        }
+
+        /* Aplicando a animação à seção de projetos */
+        .projetos {
+            animation: backgroundAnimation 10s infinite alternate;
+            padding: 20px;
+        }
+
+        .projeto {
+            margin: 20px 0; 
+            border: 1px solid #ccc; 
+            padding: 10px; 
+            position: relative;
+            overflow: hidden;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .projeto:hover {
+            background-color: rgba(255, 255, 255, 0.2); /* Efeito de fundo ao passar o mouse */
+            transform: scale(1.05); /* Aumenta levemente o projeto */
+        }
+        .projeto::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            border: 2px solid transparent;
+            transition: border-color 0.5s, transform 0.5s;
+            z-index: -1;
+        }
+        .projeto:hover::before {
+            border-color: #4CAF50;
+            transform: scale(1.1);
+        }
+        footer { background: blue; color: white; text-align: center; padding: 10px; position: relative; bottom: 0; width: 100%; }
+        .btn { background: #4CAF50; color: white; padding: 10px 20px; border: none; cursor: pointer; margin: 10px; }
+        .btn:hover { background: #45a049; }
+    </style>
+    <link rel="stylesheet" href="../CSS/Body.css">
+</head>
+<body>
+<!--Trecho com meu nome e área-->
+<header>
+    <h1>Sidney Rodrigues - Backend dev</h1>
+</header>
+<!--Trecho com uma parte "Sobre Mim", Habilidades e projetos-->
+<section>
+    <h2>Sobre Mim</h2>
+    <p>Sou um desenvolvedor back-end buscando conhecimento e novas oportunidades.</p>
+
+    <h2>Habilidades:</h2>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>C</li>
+    </ul>
+    <!--Criação da classe "PROJETOS, também utilizando duas div para cada projeto.-->
+    <h2 class="projetos">Meus Projetos:</h2>
+    <div class="projeto">
+        <h3>Calculadora de alvenaria:</h3>
+        <p>Código feito em C com o objetivo de calcular os materiais utilizados em alvenaria na área de Engenharia Civil.</p>
+    </div>
+    <div class="projeto">
+        <h3>Projeto misterioso</h3>
+        <p>Dois reais ou um projeto misterioso?.</p>
+    </div>
+    <!--Área de meios de contato.-->
+    <h2>Contatos</h2>
+    <p>Se você quiser entrar em contato, sinta-se à vontade para enviar um e-mail para:</p>
+    <p><strong>sidney.rgmp@gmail.com</strong></p>
+    <p>Ou me encontrar nas redes sociais:</p>
+    <ul>
+        <li><a href="www.linkedin.com/in/sidneyrodrigues010" target="_blank">LinkedIn</a></li>
+        <li><a href="https://github.com/DneyDev" target="_blank">GitHub</a></li>
+    </ul>
+
+    <h2>Currículo</h2>
+    <button class="btn" onclick="baixarCurriculo()">Visualizar Currículo</button>
+</section>
+
+<!--Rodapé com uma espécie de marca d'água :D-->
+<footer>
+    <p>&copy; 2024 RODRIGUES, Sidney - Todos os direitos reservados.</p>
+</footer>
+
+<script>
+    function baixarCurriculo() {
+        window.location.href = 'https://mail.google.com/mail/u/3?ui=2&ik=d3c37d14f2&attid=0.1&permmsgid=msg-a:r214497983222346611&th=18f98442bdfca643&view=att&disp=inline&realattid=f_lwfkvbvu0';
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log("Portfólio carregado!");
+    });
+</script>
+
+</body>
+</html>
